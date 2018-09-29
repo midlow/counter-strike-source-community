@@ -81,3 +81,17 @@ mp/src/game/server/server_cstrike\.vpc\.sentinel
 mp/src/game/client/client_cstrike\.vpc\.sentinel
 
 mp/src/mathlib/mathlib\.vpc\.sentinel
+
+mp/game/bin/
+mp/game/cstrike_community/cfg/server_blacklist.txt
+mp/game/cstrike_community/cfg/settings.scr
+mp/game/cstrike_community/download/
+mp/game/cstrike_community/downloadlists/
+mp/game/cstrike_community/sound/sound.cache
+mp/game/cstrike_community/serverconfig.vdf
+mp/game/cstrike_community/modelsounds.cache
+mp/game/cstrike_community/stats.txt
+mp/game/cstrike_community/voice_ban.dt
+mp/game/cstrike_community/materials/vgui/logos/spray\.vmt
+
+mp/game/cstrike_community/materials/vgui/logos/spray\.vtf
