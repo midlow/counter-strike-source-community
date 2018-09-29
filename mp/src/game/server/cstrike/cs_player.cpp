@@ -4716,7 +4716,7 @@ void CCSPlayer::State_Enter_WELCOME()
 			data->SetString( "title", title );		// info panel title
 			data->SetString( "type", "1" );			// show userdata from stringtable entry
 			data->SetString( "msg",	"motd" );		// use this stringtable entry
-			data->SetString( "cmd", "joingame" );	// exec this command if panel closed
+			data->SetInt( "cmd", 1 );				// exec this command if panel closed
 
 			ShowViewPortPanel( PANEL_INFO, true, data );
 

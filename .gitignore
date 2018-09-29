@@ -95,3 +95,7 @@ mp/game/cstrike_community/voice_ban.dt
 mp/game/cstrike_community/materials/vgui/logos/spray\.vmt
 
 mp/game/cstrike_community/materials/vgui/logos/spray\.vtf
+
+mp/src/game/server/Debug_cstrike_community/player\.obj\.enc
+
+mp/src/game/server/Debug_cstrike_community/cs_player\.obj\.enc
