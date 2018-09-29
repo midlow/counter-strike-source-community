@@ -301,6 +301,8 @@ public:
 	SectionedListPanelHeader(SectionedListPanel *parent, const char *name, int sectionID);
 	SectionedListPanelHeader(SectionedListPanel *parent, const wchar_t *name, int sectionID);
 
+	~SectionedListPanelHeader() {};
+
 	virtual void ApplySchemeSettings(IScheme *pScheme) OVERRIDE;
 	virtual void Paint() OVERRIDE;
 	virtual void PerformLayout() OVERRIDE;

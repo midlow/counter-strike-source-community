@@ -34,6 +34,7 @@ public:
 		"ButtonToggled"
 			int "state"
 	*/
+	~ToggleButton() {};
 
 protected:
 	// overrides

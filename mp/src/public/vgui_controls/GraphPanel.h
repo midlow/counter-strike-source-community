@@ -46,6 +46,8 @@ public:
 	// assumes that the samples are fairly evenly spaced (not much more work to do to fix this though)
 	void AddItem(float sampleEnd, float sampleValue);
 
+	~GraphPanel() {};
+
 protected:
 	virtual void Paint();
 	virtual void PerformLayout();

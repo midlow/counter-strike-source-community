@@ -26,6 +26,8 @@ public:
 	DirectoryTreeView(DirectorySelectDialog *parent, const char *name);
 	virtual void GenerateChildrenOfNode(int itemIndex);
 
+	~DirectoryTreeView() {};
+
 private:
 	DirectorySelectDialog *m_pParent;
 };
@@ -58,6 +60,8 @@ public:
 
 	// Expand the tree nodes to match a supplied path, optionally selecting the final directory
 	void ExpandTreeToPath( const char *lpszPath, bool bSelectFinalDirectory = true );
+
+	~DirectorySelectDialog() {};
 
 protected:
 	virtual void PerformLayout();

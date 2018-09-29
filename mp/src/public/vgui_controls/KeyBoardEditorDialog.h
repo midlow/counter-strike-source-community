@@ -100,6 +100,8 @@ public:
 	void			OnRevert();
 	void			OnUseDefaults();
 
+	~CKeyBoardEditorSheet() {};
+
 protected:
 
 	vgui::PHandle			m_hPanel;
@@ -123,6 +125,8 @@ public:
 	void			SetKeybindingsSaveFile( char const *filename, char const *pathID = 0 );
 
 	virtual void	OnCommand( char const *cmd );
+
+	~CKeyBoardEditorDialog() {};
 
 private:
 	CKeyBoardEditorSheet		*m_pKBEditor;

@@ -69,6 +69,8 @@ namespace
 
 			SetBlockDragChaining( true );
 		}
+
+		~GripPanel() {};
 		
 		// Purpose- handle window resizing
 		// Input- dx, dy, the offet of the mouse pointer from where we started dragging
@@ -265,6 +267,8 @@ namespace
 		CaptionGripPanel(Frame* frame, const char *name) : GripPanel(frame, name, 0, 0)
 		{
 		}
+
+		~CaptionGripPanel() {};
 		
 		void moved(int dx, int dy)
 		{
@@ -601,6 +605,8 @@ namespace vgui
 				input()->SetMouseCapture(GetVPanel());
 			}
 		}
+
+		~FrameButton() {};
 };
 
 
@@ -628,6 +634,8 @@ public:
 		SetMouseClickEnabled( MOUSE_RIGHT, true );
 		SetBlockDragChaining( true );
 	}
+
+	~FrameSystemButton() {};
 	
 	void SetImages( const char *pEnabledImage, const char *pDisabledImage = NULL )
 	{

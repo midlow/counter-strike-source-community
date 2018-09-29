@@ -30,6 +30,8 @@ class ScrollBarSlider : public Panel
 public:
 	ScrollBarSlider(Panel *parent, const char *panelName, bool vertical);
 
+	~ScrollBarSlider() {};
+
 	// Set the ScrollBarSlider value of the nob.
 	virtual void SetValue(int value); 
 	virtual int  GetValue();
@@ -91,4 +93,4 @@ private:
 
 } // namespace vgui
 
-#endif // SCROLLBARSLIDER_H
+#endif //SCROLLBARSLIDER_H

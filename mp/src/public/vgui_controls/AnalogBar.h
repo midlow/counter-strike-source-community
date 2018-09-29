@@ -102,6 +102,8 @@ public:
 	ContinuousAnalogBar(Panel *parent, const char *panelName);
 
 	virtual void Paint();
+
+	~ContinuousAnalogBar() {};
 };
 
 } // namespace vgui

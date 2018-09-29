@@ -162,6 +162,8 @@ public:
 
 	virtual void OnKeyCodePressed( vgui::KeyCode code );
 
+	~CConsoleDialog() {};
+
 protected:
 	CConsolePanel *m_pConsolePanel;
 };

@@ -36,6 +36,7 @@ public:
 
 		return m_DisabledBgColor;
 	}
+	~ComboBoxButton() {};
 
 private:
 	Color m_DisabledBgColor;

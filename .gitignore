@@ -57,3 +57,27 @@ config.cfg
 # Windows build products
 *.filters
 *.vpc_crc
+
+mp/src/.vs
+
+mp/src/.vs/
+
+mp/src/vgui2/vgui_controls/vgui_controls\.vpc\.sentinel
+
+mp/src/raytrace/Debug/vc120\.pdb
+
+mp/src/raytrace/raytrace\.vpc\.sentinel
+
+mp/src/tier1/Debug/vc120\.pdb
+
+mp/src/tier1/tier1\.vpc\.sentinel
+
+mp/src/vgui2/vgui_controls/Debug/vc120\.pdb
+
+*.pdb
+
+mp/src/game/server/server_cstrike\.vpc\.sentinel
+
+mp/src/game/client/client_cstrike\.vpc\.sentinel
+
+mp/src/mathlib/mathlib\.vpc\.sentinel

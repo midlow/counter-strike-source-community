@@ -167,6 +167,8 @@ public:
 
 	void RemovePanel( Panel *search );
 
+	~CDragDropHelperPanel() {};
+
 private:
 	struct DragHelperPanel_t
 	{

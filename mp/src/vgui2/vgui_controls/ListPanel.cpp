@@ -70,6 +70,8 @@ public:
 	virtual void OnMousePressed(MouseCode code);
 
 	void OpenColumnChoiceMenu();
+
+	~ColumnButton() {};
 };
 
 ColumnButton::ColumnButton(vgui::Panel *parent, const char *name, const char *text) : Button(parent, name, text)
@@ -135,6 +137,8 @@ public:
 	virtual void OnMouseReleased(MouseCode code);
 	virtual void OnCursorMoved(int x, int y);
 	virtual void SetMovable(bool state);
+
+	~Dragger() {};
 
 private:
 	int m_iDragger;

@@ -210,6 +210,8 @@ private:
 		void SetHidden( bool bState  ) { m_bHidden = bState; }
 		bool BIsHidden() { return m_bHidden; }
 
+		~CHTMLFindBar() {};
+
 	private:
 		vgui::TextEntry *m_pFindBar;
 		vgui::HTML *m_pParent;
