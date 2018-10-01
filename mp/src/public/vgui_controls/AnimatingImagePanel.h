@@ -41,6 +41,8 @@ public:
 	virtual void StopAnimation();
 	virtual void ResetAnimation(int frame = 0);
 
+	~AnimatingImagePanel() {};
+
 protected:
 	virtual void OnTick();
 	virtual void PerformLayout();

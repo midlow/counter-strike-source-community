@@ -41,6 +41,8 @@ public:
 		SetMouseInputEnabled( false );
 	}
 
+	~HTMLInterior() {};
+
 private:
 	HTML *m_pHTML;
 };
@@ -62,6 +64,8 @@ class HTMLPopup : public vgui::Frame
 			BaseClass::OnSetHTMLTitle( pchTitle );
 			m_pParent->SetTitle( pchTitle, true );
 		}
+
+		~PopupHTML() {};
 
 	private:
 		Frame *m_pParent;

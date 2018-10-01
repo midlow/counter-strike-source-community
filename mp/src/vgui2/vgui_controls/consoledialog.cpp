@@ -63,6 +63,8 @@ public:
 		return m_pFocus->GetVPanel();
 	}
 
+	~CNonFocusableMenu() {};
+
 private:
 	Panel		*m_pFocus;
 };
@@ -103,6 +105,8 @@ public:
 			PostMessage(GetParent(), new KeyValues("CloseCompletionList"));
 		}
 	}
+
+	~TabCatchingTextEntry() {};
 
 private:
 	VPANEL m_pCompletionList;

@@ -34,6 +34,8 @@ public:
 	const char *GetBindingText( int idx );
 	const char *GetBindingIcon( int idx );
 
+	~CControllerMap() {};
+
 private:
 
 	struct button_t

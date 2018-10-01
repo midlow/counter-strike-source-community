@@ -219,6 +219,8 @@ public:
 		Panel::SetVisible(state);
 	}
 
+	~FileCompletionMenu() {};
+
 };
 
 

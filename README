@@ -22,8 +22,6 @@ and hostages and yes the Shield is missing in this pre-alpha but will ever fixed
 
 ## Bugs
 
-- If the player is too close to bomb's radius the game crash (you are warned)
-- Closing the motd don’t bring the class selection screen. the only way to skip this limitation is opening the Dev console and type "joingame".
 - The prop’s physics is a little... estranged... well sometimes you pass the entire prop but other times the prop push the player.
 - The leaked scoreboard doesn’t work in the Source 2013 so the cheap way to fix this is using the SDK Template has placeholder until a fix is incoming.
 - The round DONT end don't import if the time is 0:00 just the round doesn’t end.

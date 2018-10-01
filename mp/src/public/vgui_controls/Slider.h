@@ -27,6 +27,8 @@ class Slider : public Panel
 public:
 	Slider(Panel *parent, const char *panelName);
 
+	~Slider() {};
+
 	// interface
 	virtual void SetValue(int value, bool bTriggerChangeMessage = true); 
 	virtual int  GetValue();
