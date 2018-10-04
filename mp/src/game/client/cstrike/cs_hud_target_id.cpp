@@ -318,10 +318,23 @@ void CTargetID::Paint()
 				xpos = (ScreenWidth() - wide) / 2;
 			}
 			
+#ifdef COMMUNITY_DLL
+			vgui::surface()->DrawSetTextFont( m_hFont );
+
+			// draw a black dropshadow ( the default one looks horrible )
+			vgui::surface()->DrawSetTextPos( xpos+1, ypos+1 );
+			vgui::surface()->DrawSetTextColor( Color( 0,0,0,255 ) );
+			vgui::surface()->DrawPrintText( sIDString, wcslen(sIDString) );		
+
+			vgui::surface()->DrawSetTextPos( xpos, ypos );
+			vgui::surface()->DrawSetTextColor( g_PR->GetTeamColor( pPlayer->GetTeamNumber() ) );
+			vgui::surface()->DrawPrintText( sIDString, wcslen(sIDString) );
+#else
 			vgui::surface()->DrawSetTextFont( m_hFont );
 			vgui::surface()->DrawSetTextPos( xpos, ypos );
 			vgui::surface()->DrawSetTextColor( c );
 			vgui::surface()->DrawPrintText( sIDString, wcslen(sIDString) );
+#endif
 		}
 	}
 }
