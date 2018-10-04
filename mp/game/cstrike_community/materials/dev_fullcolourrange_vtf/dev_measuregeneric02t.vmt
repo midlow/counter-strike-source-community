@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "dev_fullcolourrange_vtf/dev_measuregeneric02t"
+	"$bumpmap" "dev_fullcolourrange_vtf/dev_measuregeneric02_normal"
+	"$surfaceprop" "Brick"
+	"%keywords" "dev, opti"
+}

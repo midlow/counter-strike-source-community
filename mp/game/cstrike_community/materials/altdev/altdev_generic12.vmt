@@ -1,0 +1,5 @@
+LightmappedGeneric
+{
+	$basetexture altdev/altdev_generic12
+	$surfaceprop concrete
+}

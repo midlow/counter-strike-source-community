@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "dev_fullcolourrange_vtf/dev_measurewall02r"
+	"$surfaceprop" "Brick"
+	"%keywords" "dev, opti"
+}
