@@ -119,7 +119,8 @@ bool		g_bStaticPropLighting = false;
 bool        g_bStaticPropPolys = false;
 bool        g_bTextureShadows = false;
 bool        g_bDisablePropSelfShadowing = false;
-
+bool		g_bAllowDynamicPropsAsStatic = false;
+bool		g_bIgnoreModelVersions = false;
 
 CUtlVector<byte> g_FacesVisibleToLights;
 
@@ -2345,7 +2346,7 @@ void VRAD_Finish()
 	
 	char str[512];
 	GetHourMinuteSecondsString( (int)( end - g_flStartTime ), str, sizeof( str ) );
-	Msg( "%s elapsed\n", str );
+	Msg( "HCC VRAD Done, %s elapsed\n", str );
 
 	ReleasePakFileLumps();
 }
@@ -2387,6 +2388,16 @@ int ParseCommandLine( int argc, char **argv, bool *onlydetail )
 		else if ( !Q_stricmp( argv[i], "-StaticPropPolys" ) )
 		{
 			g_bStaticPropPolys = true;
+		}
+		else if (!Q_stricmp(argv[i], "-IgnoreModelVersions"))
+		{
+			Msg("IgnoreModelVersions = true\n");
+			g_bIgnoreModelVersions = true;
+		}
+		else if (!Q_stricmp(argv[i], "-AllowDynamicPropsAsStatic"))
+		{
+			Msg("AllowDynamicPropsAsStatic = true\n");
+			g_bAllowDynamicPropsAsStatic = true;
 		}
 		else if ( !Q_stricmp( argv[i], "-nossprops" ) )
 		{
@@ -2851,6 +2862,10 @@ void PrintUsage( int argc, char **argv )
         "  -StaticPropPolys   : Perform shadow tests of static props at polygon precision\n"
         "  -OnlyStaticProps   : Only perform direct static prop lighting (vrad debug option)\n"
 		"  -StaticPropNormals : when lighting static props, just show their normal vector\n"
+		"  -IgnoreModelVersions  : Ignore .MDL and .VTX versions when loading models\n"
+		"  -AllowDynamicPropsAsStatic  : Allow all models with the 'static' flag in the\n"
+		"							    model viewer to be used on prop_static, even when\n"
+		"							    their propdata doesn't contain 'allowstatic'.\n"
 		"  -textureshadows : Allows texture alpha channels to block light - rays intersecting alpha surfaces will sample the texture\n"
 		"  -noskyboxrecurse : Turn off recursion into 3d skybox (skybox shadows on world)\n"
 		"  -nossprops      : Globally disable self-shadowing on static props\n"
@@ -2888,9 +2903,9 @@ void PrintUsage( int argc, char **argv )
 int RunVRAD( int argc, char **argv )
 {
 #if defined(_MSC_VER) && ( _MSC_VER >= 1310 )
-	Msg("Valve Software - vrad.exe SSE (" __DATE__ ")\n" );
+	Msg("(HCC) Valve Software - vrad.exe SSE (" __DATE__ ")\n" );
 #else
-	Msg("Valve Software - vrad.exe (" __DATE__ ")\n" );
+	Msg("(HCC) Valve Software - vrad.exe (" __DATE__ ")\n" );
 #endif
 
 	Msg("\n      Valve Radiosity Simulator     \n");

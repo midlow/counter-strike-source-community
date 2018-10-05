@@ -425,7 +425,7 @@ C_BasePlayer::C_BasePlayer() : m_iv_vecViewOffset( "C_BasePlayer::m_iv_vecViewOf
 	m_bResampleWaterSurface = true;
 	
 	ResetObserverMode();
-	
+
 
 	m_vecPredictionError.Init();
 	m_flPredictionErrorTime = 0;
@@ -441,7 +441,7 @@ C_BasePlayer::C_BasePlayer() : m_iv_vecViewOffset( "C_BasePlayer::m_iv_vecViewOf
 
 	m_nForceVisionFilterFlags = 0;
 	m_nLocalPlayerVisionFlags = 0;
-	
+
     ConVarRef scissor("r_flashlightscissor");
     scissor.SetValue("0");
 
