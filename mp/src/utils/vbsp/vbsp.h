@@ -364,6 +364,7 @@ extern	bool		g_snapAxialPlanes;
 extern	bool		g_NodrawTriggers;
 extern	bool		g_DisableWaterLighting;
 extern	bool		g_bAllowDetailCracks;
+extern	bool		g_bAllowDynamicPropsAsStatic;
 extern	bool		g_bNoVirtualMesh;
 extern	char		outbase[32];
 
@@ -414,6 +415,7 @@ void	CreateBrush (int brushnum);
 // detail objects
 //=============================================================================
 
+void AddDetailBlocker( entity_t *pFuncDetailBlocker );
 void LoadEmitDetailObjectDictionary( char const* pGameDir );
 void EmitDetailObjects();
 

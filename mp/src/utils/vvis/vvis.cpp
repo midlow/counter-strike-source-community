@@ -1076,7 +1076,7 @@ int RunVVis( int argc, char **argv )
 	double		start, end;
 
 
-	Msg( "Valve Software - vvis.exe (%s)\n", __DATE__ );
+	Msg( "(HCC) Valve Software - vvis.exe (%s)\n", __DATE__ );
 
 	verbose = false;
 
@@ -1199,7 +1199,7 @@ int RunVVis( int argc, char **argv )
 
 	char str[512];
 	GetHourMinuteSecondsString( (int)( end - start ), str, sizeof( str ) );
-	Msg( "%s elapsed\n", str );
+	Msg( "HCC VVIS Done, %s elapsed\n", str );
 
 	ReleasePakFileLumps();
 	DeleteCmdLine( argc, argv );
