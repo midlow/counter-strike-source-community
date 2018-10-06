@@ -1,0 +1,74 @@
+//-----------------------------------------------------------------------------
+//	SDKLAUNCHER.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\.."
+$Macro OUTBINDIR	"$SRCDIR\..\game\bin"
+$Macro OUTBINNAME	"sdk_launcher"
+
+$Include "$SRCDIR\vpc_scripts\source_exe_win_win32_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$Create/UsePrecompiledHeader		"Use Precompiled Header (/Yu)"
+		$PrecompiledHeaderFile				"$(IntDir)/sdk_launcher.pch"
+	}
+}
+
+$Project "SDKLauncher"
+{
+	$Folder	"Source Files"
+	{
+		$File	"$SRCDIR\common\ConfigManager.cpp"
+		$File	"$SRCDIR\common\SourceAppInfo.cpp"
+		$File	"configs.cpp"
+		$File	"CreateModWizard.cpp"
+		$File	"CreateModWizard.h"
+		$File	"$SRCDIR\public\filesystem_init.cpp"
+		$File	"$SRCDIR\public\registry.cpp"
+		$File	"Main.cpp"
+		$File	"min_footprint_files.cpp"
+		$File	"ModConfigsHelper.cpp"
+		$File	"ModWizard_CopyFiles.cpp"
+		$File	"ModWizard_Finished.cpp"
+		$File	"ModWizard_GetModInfo.cpp"
+		$File	"ModWizard_Intro.cpp"
+		$File	"sdklauncher_main.h"
+		$File	"SDKLauncherDialog.cpp"
+		$File	"$SRCDIR\public\vgui_controls\vgui_controls.cpp"
+	}
+
+	$Folder	"Header Files"
+	{
+		$File	"$SRCDIR\common\ConfigManager.h"
+		$File	"configs.h"
+		$File	"$SRCDIR\public\filesystem_init.h"
+		$File	"$SRCDIR\public\tier1\interface.h"
+		$File	"min_footprint_files.h"
+		$File	"ModConfigsHelper.h"
+		$File	"ModWizard_CopyFiles.h"
+		$File	"ModWizard_GetModInfo.h"
+		$File	"ModWizard_Intro.h"
+		$File	"SDKLauncherDialog.h"
+	}
+	
+	$Folder	"Resource Files"
+	{
+		$File	"res\sdk_launcher_2.ico"
+		$File	"res\sdk_launcher.rc"
+		$File	"res\sdk_launcher.ico"
+	}
+
+	$Folder "Link Libraries"
+	{
+		$File	"$SRCDIR\lib\public\appframework.lib"
+		$File	"$SRCDIR\lib\common\Steam.lib"
+		$File	"$SRCDIR\lib\public\tier2.lib"
+		$File	"$SRCDIR\lib\public\tier3.lib"
+		$File	"$SRCDIR\lib\public\vgui_controls.lib"
+	}
+}
