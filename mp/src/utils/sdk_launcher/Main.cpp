@@ -18,7 +18,7 @@
 #include "SDKLauncherDialog.h"
 #include "appframework/tier3app.h"
 #include "tier0/icommandline.h"
-#include "filesystem_tools.h"
+#include "filesystem_init.h"
 #include "sdklauncher_main.h"
 #include "configs.h"
 #include "min_footprint_files.h"

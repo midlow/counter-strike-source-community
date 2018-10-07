@@ -9,12 +9,12 @@
 #include "ModWizard_Finished.h"
 #include "CreateModWizard.h"
 #include "configs.h"
-#include "filesystem_tools.h"
+#include "filesystem_init.h"
 #include "sdklauncher_main.h"
 #include "SDKLauncherDialog.h"
 #include <vgui_controls/WizardPanel.h>
 #include <vgui/ivgui.h>
-#include "SourceAppInfo.h"
+#include "SDKLauncher/SourceAppInfo.h"
 
 using namespace vgui;
 

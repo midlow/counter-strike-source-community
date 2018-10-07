@@ -7,7 +7,7 @@
 #include <windows.h>
 #include "CreateModWizard.h"
 #include "sdklauncher_main.h"
-#include "filesystem_tools.h"
+#include "filesystem_init.h"
 #include "sdklauncherdialog.h"
 #include "configs.h"
 #include <vgui_controls/WizardSubPanel.h>

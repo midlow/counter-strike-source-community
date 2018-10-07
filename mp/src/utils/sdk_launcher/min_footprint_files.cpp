@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <vgui/isystem.h>
 #include "min_footprint_files.h"
-#include "filesystem_tools.h"
+#include "filesystem_init.h"
 #include "keyvalues.h"
 #include "sdklauncher_main.h"
 #include "ModConfigsHelper.h"
@@ -19,7 +19,7 @@
 #include <vgui_controls/ProgressBar.h>
 #include <vgui/iinput.h>
 #include <vgui/ivgui.h>
-#include "SourceAppInfo.h"
+#include "SDKLauncher/SourceAppInfo.h"
 
 extern void OpenLocalizedURL( const char *lpszLocalName );
 extern FSReturnCode_t LoadGameInfoFile( const char *pDirectoryName, 

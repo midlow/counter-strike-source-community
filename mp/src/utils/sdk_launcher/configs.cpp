@@ -7,9 +7,9 @@
 #include <windows.h>
 #include "interface.h"
 #include "tier0/icommandline.h"
-#include "filesystem_tools.h"
+#include "filesystem_init.h"
 #include "sdklauncher_main.h"
-#include "ConfigManager.h"
+#include "SDKLauncher/ConfigManager.h"
 #include "KeyValues.h"
 
 #include <io.h>

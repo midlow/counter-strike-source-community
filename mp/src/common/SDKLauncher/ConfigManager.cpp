@@ -7,8 +7,8 @@
 #include <windows.h>
 #include "interface.h"
 #include "tier0/icommandline.h"
-#include "filesystem_tools.h"
-#include "steam.h"
+#include "filesystem_init.h"
+#include <steam/steam_api.h>
 #include "KeyValues.h"
 #include "UtlBuffer.h"
 #include <io.h>
@@ -560,6 +560,7 @@ bool CGameConfigManager::AddDefaultConfig( const defaultConfigInfo_t &info, KeyV
 //-----------------------------------------------------------------------------
 bool CGameConfigManager::IsAppSubscribed( int nAppID )
 {
+#if 0
 	// If we're running Steam, poll it
 	if ( g_pFullFileSystem != NULL && g_pFullFileSystem->IsSteam() )
 	{
@@ -572,6 +573,7 @@ bool CGameConfigManager::IsAppSubscribed( int nAppID )
 		return false;
 #endif
 	}
+#endif
 
 	// If we're not, assume that we're in-house and give everything
 	return true;

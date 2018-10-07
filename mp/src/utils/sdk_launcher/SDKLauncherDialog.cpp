@@ -26,11 +26,10 @@
 #include <FileSystem.h>
 #include <io.h>
 #include "CreateModWizard.h"
-#include "filesystem_tools.h"
+#include "filesystem_init.h"
 #include "min_footprint_files.h"
-#include "ConfigManager.h"
-#include "filesystem_tools.h"
-#include "steam.h"
+#include "SDKLauncher/ConfigManager.h"
+#include <steam/steam_api.h>
 #include <iregistry.h>
 
 #include <sys/stat.h>

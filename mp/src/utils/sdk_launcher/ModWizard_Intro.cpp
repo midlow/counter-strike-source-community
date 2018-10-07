@@ -7,9 +7,9 @@
 #include "ModWizard_Intro.h"
 #include <vgui_controls/WizardPanel.h>
 #include "ModWizard_GetModInfo.h"
-#include "steam.h"
-#include "filesystem_tools.h"
-#include "SourceAppInfo.h"
+#include <steam/steam_api.h>
+#include "filesystem_init.h"
+#include "SDKLauncher/SourceAppInfo.h"
 
 using namespace vgui;
 
@@ -19,7 +19,8 @@ using namespace vgui;
 //-----------------------------------------------------------------------------
 bool IsGameSubscribed( int nSteamAppId )
 {
-#ifndef NO_STEAM
+#if 0
+//#ifndef NO_STEAM
    bool retVal = false;
 
 	if ( g_pFullFileSystem != NULL && g_pFullFileSystem->IsSteam() )
