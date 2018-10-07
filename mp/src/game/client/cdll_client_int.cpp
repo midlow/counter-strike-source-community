@@ -1127,6 +1127,10 @@ bool CHLClient::ReplayPostInit()
 #endif
 }
 
+#ifdef COMMUNITY_DLL
+void SwapDisconnectCommand();
+#endif
+
 //-----------------------------------------------------------------------------
 // Purpose: Called after client & server DLL are loaded and all systems initialized
 //-----------------------------------------------------------------------------
@@ -1155,6 +1159,10 @@ void CHLClient::PostInit()
 			g_pFullFileSystem->AddSearchPath( szPath, "GAME" );
 		}
 	}
+#endif
+
+#ifdef COMMUNITY_DLL
+	SwapDisconnectCommand();
 #endif
 }
 

@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-//	SDKLAUNCHER.VPC
+//	SDK_LAUNCHER.VPC
 //
 //	Project Script
 //-----------------------------------------------------------------------------
@@ -23,8 +23,8 @@ $Project "SDKLauncher"
 {
 	$Folder	"Source Files"
 	{
-		$File	"$SRCDIR\common\ConfigManager.cpp"
-		$File	"$SRCDIR\common\SourceAppInfo.cpp"
+		$File	"$SRCDIR\common\SDKLauncher\ConfigManager.cpp"
+		$File	"$SRCDIR\common\SDKLauncher\SourceAppInfo.cpp"
 		$File	"configs.cpp"
 		$File	"CreateModWizard.cpp"
 		$File	"CreateModWizard.h"
@@ -44,7 +44,8 @@ $Project "SDKLauncher"
 
 	$Folder	"Header Files"
 	{
-		$File	"$SRCDIR\common\ConfigManager.h"
+		$File	"$SRCDIR\common\SDKLauncher\ConfigManager.h"
+		$File	"$SRCDIR\common\SDKLauncher\SourceAppInfo.h"
 		$File	"configs.h"
 		$File	"$SRCDIR\public\filesystem_init.h"
 		$File	"$SRCDIR\public\tier1\interface.h"
@@ -63,12 +64,12 @@ $Project "SDKLauncher"
 		$File	"res\sdk_launcher.ico"
 	}
 
-	$Folder "Link Libraries"
+	$Folder	"Link Libraries"
 	{
-		$File	"$SRCDIR\lib\public\appframework.lib"
-		$File	"$SRCDIR\lib\common\Steam.lib"
-		$File	"$SRCDIR\lib\public\tier2.lib"
-		$File	"$SRCDIR\lib\public\tier3.lib"
-		$File	"$SRCDIR\lib\public\vgui_controls.lib"
+		$Lib	appframework
+		$Lib	steam_api
+		$Lib	tier2
+		$Lib	tier3
+		$Lib	vgui_controls
 	}
 }
