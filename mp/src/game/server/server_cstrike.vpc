@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"cstrike_community"
+$Macro GAMENAME 	"css"
 
 $Include "$SRCDIR\game\server\server_base.vpc"
 $Include "$SRCDIR\game\server\nav_mesh.vpc" [$SOURCESDK]
@@ -20,7 +20,7 @@ $Configuration
 	}
 }
 
-$Project "Server (CStrike)"
+$Project "Server (CSS)"
 {
 	$Folder	"Source Files"
 	{

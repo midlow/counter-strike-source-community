@@ -25,6 +25,11 @@
 #include <vgui/ILocalize.h>
 #include <vgui/VGUI.h>
 
+#ifdef COMMUNITY_DLL
+// Menu Video
+#include "menu_background.h"
+#endif
+
 // client dll/engine defines
 #include "hud.h"
 #include <voice_status.h>
@@ -187,6 +192,46 @@ CON_COMMAND_F( togglescores, "Toggles score panel", FCVAR_CLIENTCMD_CAN_EXECUTE)
 	}
 }
 
+#ifdef COMMUNITY_DLL
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+CounterStrikeViewport::CounterStrikeViewport()
+{
+	m_pMainMenuPanel = NULL;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose:
+//-----------------------------------------------------------------------------
+CounterStrikeViewport::~CounterStrikeViewport()
+{
+	if ( !m_bHasParent && m_pMainMenuPanel )
+		m_pMainMenuPanel->MarkForDeletion();
+
+	m_pMainMenuPanel = NULL;
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: Updates hud to handle the new screen size
+//-----------------------------------------------------------------------------
+void CounterStrikeViewport::OnScreenSizeChanged( int iOldWide, int iOldTall )
+{
+	BaseClass::OnScreenSizeChanged( iOldWide, iOldTall );
+
+	bool bRestartMainMenuVideo = false;
+	if (m_pMainMenuPanel)
+		bRestartMainMenuVideo = m_pMainMenuPanel->IsVideoPlaying();
+
+	m_pMainMenuPanel = new CMainMenu( NULL, NULL );
+	m_pMainMenuPanel->SetZPos( 500 );
+	m_pMainMenuPanel->SetVisible( false );
+
+	if (bRestartMainMenuVideo)
+		m_pMainMenuPanel->StartVideo();
+}
+#endif
+
 //-----------------------------------------------------------------------------
 // Purpose: called when the VGUI subsystem starts up
 //			Creates the sub panels and initialises them
@@ -194,6 +239,14 @@ CON_COMMAND_F( togglescores, "Toggles score panel", FCVAR_CLIENTCMD_CAN_EXECUTE)
 void CounterStrikeViewport::Start( IGameUIFuncs *pGameUIFuncs, IGameEventManager2 * pGameEventManager )
 {
 	BaseClass::Start( pGameUIFuncs, pGameEventManager );
+
+#ifdef COMMUNITY_DLL	
+	m_pMainMenuPanel = new CMainMenu( NULL, NULL );
+	m_pMainMenuPanel->SetZPos( 500 );
+	m_pMainMenuPanel->SetVisible( false );
+	m_pMainMenuPanel->StartVideo();
+#endif
+
 }
 
 void CounterStrikeViewport::ApplySchemeSettings( vgui::IScheme *pScheme )
@@ -286,6 +339,19 @@ void CounterStrikeViewport::CreateDefaultPanels( void )
 
 }
 
+#ifdef COMMUNITY_DLL
+void CounterStrikeViewport::RemoveAllPanels( void )
+{
+	BaseClass::RemoveAllPanels();
+	
+	if (m_pMainMenuPanel)
+	{
+		m_pMainMenuPanel->MarkForDeletion();
+		m_pMainMenuPanel = NULL;
+	}
+}
+#endif
+
 int CounterStrikeViewport::GetDeathMessageStartHeight( void )
 {
 	int x = YRES(2);
@@ -297,6 +363,19 @@ int CounterStrikeViewport::GetDeathMessageStartHeight( void )
 
 	return x;
 }
+
+#ifdef COMMUNITY_DLL
+void CounterStrikeViewport::StartMainMenuVideo()
+{
+	if ( m_pMainMenuPanel )
+		m_pMainMenuPanel->StartVideo();
+}
+void CounterStrikeViewport::StopMainMenuVideo()
+{
+	if ( m_pMainMenuPanel )
+		m_pMainMenuPanel->StopVideo();
+}
+#endif
 
 /*
 ==========================

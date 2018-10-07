@@ -39,21 +39,42 @@ private:
 
 public:
 
+#ifdef COMMUNITY_DLL
+			CounterStrikeViewport();
+	virtual ~CounterStrikeViewport();
+#endif
+
 	IViewPortPanel* CreatePanelByName(const char *szPanelName);
 	void CreateDefaultPanels( void );
+#ifdef COMMUNITY_DLL
+	virtual void RemoveAllPanels( void );
+#endif
 
 	virtual void ApplySchemeSettings( vgui::IScheme *pScheme );
 	virtual void Start( IGameUIFuncs *pGameUIFuncs, IGameEventManager2 * pGameEventManager );
 		
 	int GetDeathMessageStartHeight( void );
 
+#ifdef COMMUNITY_DLL	
+	void StartMainMenuVideo();
+	void StopMainMenuVideo();
+#endif
+
 	virtual void ShowBackGround(bool bShow) 
 	{
 		m_pBackGround->SetVisible( false );	// CS:S menus paint their own backgrounds...
 	}
+	
+#ifdef COMMUNITY_DLL
+	virtual void OnScreenSizeChanged(int iOldWide, int iOldTall);
+#endif
 
 private:
 	void CenterWindow( vgui::Frame *win );
+
+#ifdef COMMUNITY_DLL	
+	class CMainMenu* m_pMainMenuPanel;
+#endif
 
 };
 
