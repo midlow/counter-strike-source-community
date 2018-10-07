@@ -342,7 +342,7 @@ void CounterStrikeViewport::CreateDefaultPanels( void )
 #ifdef COMMUNITY_DLL
 void CounterStrikeViewport::RemoveAllPanels( void )
 {
-	BaseClass::RemoveAllPanels( void );
+	BaseClass::RemoveAllPanels();
 	
 	if (m_pMainMenuPanel)
 	{
