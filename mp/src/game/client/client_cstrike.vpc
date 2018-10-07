@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"cstrike_community"
+$Macro GAMENAME 	"css"
 
 $Include "$SRCDIR\game\client\client_base.vpc"
 
@@ -19,7 +19,7 @@ $Configuration
 	}
 }
 
-$Project "Client (CStrike)"
+$Project "Client (CSS)"
 {
 	$Folder	"Source Files"
 	{
